@@ -7,12 +7,12 @@ spec:
   - name: app
     image: nginx
     resources:
-      requests:
+      requests:         # Requests are the minimum guaranteed amount of a resource that is reserved for a container.
         memory: "64Mi"
         cpu: "2"
-      limits:
+      limits:           # Kubernetes defines Limits as the maximum amount of a resource to be used by a container. This means that the container can never consume more than the memory amount or CPU amount indicated.
         memory: "128Mi"
-        cpu: "1"
+        cpu: "4"
   
   
   # - name: log-aggregator
