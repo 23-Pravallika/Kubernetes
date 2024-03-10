@@ -9,14 +9,14 @@ spec:
     command: ["sleep", "10000"]
     envFrom:
       - configMapRef:
-          name: configMap-demo
+          name: configmap-demo
 
 ---
 
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: configMap-demo
+  name: configmap-demo
 data:
   usr: "robo90"
   password: "loacl@23"
@@ -36,7 +36,7 @@ spec:
     image: nginx
     envFrom:
       - configMapRef:
-          name: configMap-demo
+          name: configmap-demo
 
 
 
