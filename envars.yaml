@@ -1,0 +1,19 @@
+# Scope of the env is with in the container
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: centos-pod
+spec:
+  containers:
+  - name: centos-container
+    image: centos:7
+    command: ["sleep", "10000"]
+    env:
+    - name: usr
+      value: "robo90"
+    - name: password
+      value: "loacl@23"
+
+
+

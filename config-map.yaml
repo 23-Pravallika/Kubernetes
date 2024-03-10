@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: centos-pod
+spec:
+  containers:
+  - name: centos-container
+    image: centos:7
+    command: ["sleep", "10000"]
+    envFrom:
+      - configMapRef:
+          name: configMap-demo
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configMap-demo
+data:
+  usr: "robo90"
+  password: "loacl@23"
+  ENVIRONMENT: "dev"
+  TIMEOUT_INTERVAL: "20"
+
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx
+    envFrom:
+      - configMapRef:
+          name: configMap-demo
+
+
+

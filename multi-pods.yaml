@@ -1,3 +1,4 @@
+# multi-container pod 
 apiVersion: v1
 kind: Pod
 metadata:
@@ -6,5 +7,8 @@ spec:
   containers:
   - name: nginx
     image: nginx:1.14.2
-    
+  - name: alphine
+    image: httpd
 
+
+    
